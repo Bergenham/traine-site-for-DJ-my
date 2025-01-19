@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete product - {{ object.name }}</title>
+</head>
+<body>
+<p>You want delete - {{ object.name }}?</p>
+<br>
+<div>
+    <a href="{% url 'shopapp:product_details' pk=object.pk %}">Назад</a>
+</div>
+<br>
+<div>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Delete</button>
+    </form>
+</div>
+</body>
+</html>

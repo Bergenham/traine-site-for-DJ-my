@@ -1,0 +1,24 @@
+{% extends 'shopapp/baze.html' %}
+
+{% block title %}
+    Product-list
+{% endblock %}
+{% block body %}
+    <h1>Product: </h1>
+    {% if products %}
+        <div>
+            {% for i in products %}
+                <div>
+                    <p>Name - <a href="{% url 'shopapp:product_details' pk=i.pk %}">{{ i.name }}</a></p>
+                    <p>Price - {{ i.prise }}</p>
+                    <p>Discount - {% firstof i.discount 'К сожелению у вас нету скидок!' %}</p>
+                    <br>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h3>No products yet</h3>
+    {% endif %}
+    <div>
+        <a href="{% url 'shopapp:product_input' %}">Создать продукт></a>
+{% endblock %}

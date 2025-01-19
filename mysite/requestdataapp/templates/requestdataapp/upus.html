@@ -1,0 +1,12 @@
+{% extends 'requestdataapp/baze.html' %}
+{% block title %}
+itile
+{% endblock %}
+{% block body %}
+<h1>file up:</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ mainn.as_p }}
+    <button type="submit">Submit</button>
+</form>
+{% endblock %}

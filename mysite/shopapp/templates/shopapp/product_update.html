@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>update product №{{ object.pk }}</title>
+</head>
+<body>
+<div>
+    <form method="post">
+
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Sumbit</button>
+    </form>
+</div>
+<br>
+<div>
+    <a class='links' href="{% url 'shopapp:product_list' %}">Отмена</a>
+</div>
+</body>
+</html>

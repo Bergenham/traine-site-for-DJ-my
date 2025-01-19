@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if obj %}
+    <div>
+        <div>
+            {% for i in obj %}
+                <h4>title - {{ i.title }}; {{i.p}}№</h4>
+                <a href="{% url 'blogapp:detail_blog' pk=i.pk %}">Details</a>
+            <p>
+            {% endfor %}
+        </div>
+    </div>
+{% else %}
+    <div>No blog</div>
+{% endif %}
+</body>
+</html>

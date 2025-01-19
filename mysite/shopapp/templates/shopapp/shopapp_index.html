@@ -1,0 +1,16 @@
+{% load cache %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shopapp index</title>
+</head>
+<body>
+<h1>Hello User! I title "tempes"</h1>
+{% cache 30 lorem %}
+<!--lorem это ключ-->
+<div>{% lorem 3 p random %}</div>
+{% endcache %}
+</body>
+</html>

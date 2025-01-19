@@ -1,0 +1,62 @@
+[
+  {
+    "model": "shopapp.product",
+    "pk": 1,
+    "fields": {
+      "name": "Laptop",
+      "description": "Voluptatum commodi laudantium voluptate necessitatibus consequuntur architecto voluptatibus neque excepturi, debitis iste laborum itaque, corporis esse molestiae neque voluptatum quia modi, molestias delectus sequi similique, pariatur eligendi ratione reiciendis neque? Quia laborum perferendis veritatis blanditiis tempora facilis, nostrum explicabo repellat sint veritatis quisquam, eveniet laudantium non sit nesciunt blanditiis impedit ullam minus, sit sequi illo? Itaque obcaecati nemo ullam officia saepe, at rem voluptates cumque, ducimus nihil ullam amet iusto maxime animi neque dolorum, laborum magnam eius eos qui explicabo accusantium. Consequuntur optio facere, deleniti corrupti mollitia.",
+      "prise": "1999.00",
+      "discount": 0,
+      "created_at": "2024-03-22T16:16:29.623Z",
+      "arvay": false
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 2,
+    "fields": {
+      "name": "Desktop",
+      "description": "commody",
+      "prise": "2599.00",
+      "discount": 10,
+      "created_at": "2024-03-22T16:16:29.623Z",
+      "arvay": false
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 3,
+    "fields": {
+      "name": "Smartphone",
+      "description": "smart",
+      "prise": "987.00",
+      "discount": 25,
+      "created_at": "2024-03-22T16:16:29.623Z",
+      "arvay": false
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 4,
+    "fields": {
+      "name": "Tableron",
+      "description": "wd",
+      "prise": "16.00",
+      "discount": 0,
+      "created_at": "2024-04-21T19:49:42.532Z",
+      "arvay": true
+    }
+  },
+  {
+    "model": "shopapp.product",
+    "pk": 10,
+    "fields": {
+      "name": "Airplane",
+      "description": "defolt airplane, can fly and ride",
+      "prise": "45.00",
+      "discount": 0,
+      "created_at": "2024-08-21T17:37:25.118Z",
+      "arvay": false
+    }
+  }
+]

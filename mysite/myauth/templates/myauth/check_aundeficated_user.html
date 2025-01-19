@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check</title>
+</head>
+<body>
+{% if user.is_authenticated %}
+ <h2>Info:</h2>
+<p>username - {{ user.username }}</p>
+<p>email - {% firstof user.email  'no' %}</p>
+<p>bio - {% firstof user.profile.bio 'You havent bio' %}</p>
+{% else %}
+ <h2>BOOO</h2>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% load cache %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<h1>User info</h1>
+{% if user.is_authenticated %}
+  {% cache 100 ui user.username %}
+  <h2>Detail</h2>
+  <p>Username: {{ user.username }}</p>
+  <p>First name: {{ user.first_name }}</p>
+  <p>Last name: {{ user.last_name }}</p>
+  <p>Email: {{ user.email }}</p>
+  <p>Bio: {{ user.profile.bio }}</p>
+  {% endcache %}
+{% else %}
+  <h2>User is anonymous</h2>
+{% endif %}
+</body>
+</html>

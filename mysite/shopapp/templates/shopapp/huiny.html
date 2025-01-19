@@ -1,0 +1,40 @@
+{% extends 'shopapp/baze.html' %}
+
+{% block title %}
+You see group list
+{% endblock %}
+
+{% block body %}
+
+<div>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create</button>
+    </form>
+</div>
+
+<h1>Group:</h1>
+<div>
+    <ul>
+        {% for i in groups %}
+        <li>
+            <div>{{ i.name }}</div>
+            <ul>
+                {% for permission in i.permissions.all %}
+                <li>
+                    {{ permission.name }}
+                    (<code>{{ permission.codename }}</code>)
+                </li>
+                {% empty %}
+                Нету прав!
+                {% endfor %}
+            </ul>
+        </li>
+        {% empty %}
+        Пустая группа
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}

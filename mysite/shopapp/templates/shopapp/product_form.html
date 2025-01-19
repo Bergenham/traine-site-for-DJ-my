@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a.links:hover {
+            color: red;
+            text-decoration: underline;
+            }
+        a.links {
+            color: blue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <form method="post">
+
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Sumbit</button>
+    </form>
+</div>
+<br>
+<div>
+    <a class='links' href="{% url 'shopapp:product_list' %}">Отмена</a>
+</div>
+</body>
+</html>

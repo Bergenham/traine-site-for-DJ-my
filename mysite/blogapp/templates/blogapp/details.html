@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+id - {{ obj.pk }}
+<p>
+  title - {{ obj.title }}
+<p>
+  publesht at - {{ obj.p_d }}
+<p>
+  body - {{ obj.body }}
+<p>
+  <a href="{% url 'blogapp:main_blog' %}">Назад</a>
+</body>
+</html>

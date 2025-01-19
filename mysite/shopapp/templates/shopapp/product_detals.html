@@ -1,0 +1,35 @@
+{% extends 'shopapp/baze.html' %}
+
+{% block title %}
+{{ product.name }}
+{% endblock %}
+
+{% block body %}
+<div>
+    <br>
+    Name_product - <strong>{{ product.name }}</strong>
+    <div>
+        Description - {{ product.description }};
+        <br>
+        Prise - {{ product.prise }};
+        <br>
+        Dicount - {{ product.discount }};
+        <br>
+        Arhavate - {{ product.arvay }}
+        <br>
+
+    </div>
+</div>
+<br>
+<div>
+    <a href="{% url 'shopapp:product_update' pk=product.pk %}">Изменить</a>
+</div>
+<br>
+<div>
+    <a href="{% url 'shopapp:product_delete' pk=product.pk %}">Удалить</a>
+</div>
+<br>
+<div>
+    <a href="{% url 'shopapp:product_list' %}">Назад<a>
+</div>
+{% endblock %}

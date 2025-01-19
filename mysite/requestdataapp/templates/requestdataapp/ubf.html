@@ -1,0 +1,39 @@
+{% extends 'requestdataapp/baze.html' %}
+{% block title %}
+title
+{% endblock %}
+{% block body %}
+<h1>User Form:</h1>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    {% if request.POST %}
+        <div>
+             <h1>Info:</h1>
+            <table>
+                <tr>
+                    <tb>Name: </tb>
+                    <tb>{{ request.POST.name }}</tb>
+                </tr>
+
+                <tr>
+                    <p>
+                        <tb>Age: </tb>
+                        <tb>{{ request.POST.age }}</tb>
+                    </p>
+                </tr>
+
+                <tr>
+                    <p>
+                        <tb>Bio: </tb>
+                        <tb>{{ request.POST.bio|linebreaks}}</tb>
+                    </p>
+                </tr>
+            </table>
+        </div>
+    {% endif %}
+{% endblock %}
