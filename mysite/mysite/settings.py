@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+from os import getenv
 from pathlib import Path
 import sentry_sdk
 from django.conf.global_settings import LOGIN_URL, LANGUAGES, LOCALE_PATHS, LOGGING, INTERNAL_IPS, \
@@ -19,21 +20,23 @@ from drf_spectacular.settings import SPECTACULAR_DEFAULTS
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+DATABASE_DIR = BASE_DIR / 'database'
+DATABASE_DIR.mkdir(exist_ok=True)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9#=))8n1&!axe(r9=s&mad(1+wk=v6_4jisjp2*q@tugb)&tlr'
+SECRET_KEY = getenv('DJANGO_SECRET_KEY', 'django-insecure-9#=))8n1&!axe(r9=s&mad(1+wk=v6_4jisjp2*q@tugb)&tlr',)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = getenv("DJANGO_DEBUG", '0') == 1
 
 ALLOWED_HOSTS = [
     "0.0.0.0",
     "127.0.0.1",
     'localhost'
-]
+] + getenv('DJANGO_ALLOWED_HOSTS', '').split(',')
 
 INTERNAL_IPS = [
     "127.0.0.1",
@@ -107,14 +110,14 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
-
+3
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': DATABASE_DIR / 'db.sqlite3',
     }
 }
 
